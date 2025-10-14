@@ -1,1 +1,190 @@
-gjjbj
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urban Roast - Cafenea</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #f5f5f5;
+    }
+
+    header {
+      background-color: #1c1c1c;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #d4a373;
+      font-size: 28px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #d4a373;
+    }
+
+    .hero {
+      background-image: url("https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 150px 20px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #eee;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h3 {
+      color: #d4a373;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-item {
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-item h4 {
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .menu-item p {
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: #d4a373;
+      font-weight: bold;
+    }
+
+    .about {
+      text-align: center;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    footer {
+      background-color: #1c1c1c;
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #d4a373;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Urban Roast</h1>
+    <nav>
+      <a href="#acasa">Acasă</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#despre">Despre</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="acasa">
+    <h2>Bine ai venit la Urban Roast</h2>
+    <p>Locul unde aroma cafelei se întâlnește cu energia orașului.</p>
+  </section>
+
+  <section class="section" id="meniu">
+    <h3>Meniul Nostru</h3>
+    <div class="menu">
+      <div class="menu-item">
+        <h4>Espresso</h4>
+        <p>Cafea intensă, perfect echilibrată.</p>
+        <div class="price">10 lei</div>
+      </div>
+      <div class="menu-item">
+        <h4>Cappuccino</h4>
+        <p>Espresso cu spumă fină de lapte.</p>
+        <div class="price">13 lei</div>
+      </div>
+      <div class="menu-item">
+        <h4>Latte Caramel</h4>
+        <p>Dulce, cremos și cu gust de caramel.</p>
+        <div class="price">15 lei</div>
+      </div>
+      <div class="menu-item">
+        <h4>Cold Brew</h4>
+        <p>Răcoritor, preparat lent pentru gust desăvârșit.</p>
+        <div class="price">14 lei</div>
+      </div>
+      <div class="menu-item">
+        <h4>Cheesecake</h4>
+        <p>Desert cremos, preparat zilnic în cafenea.</p>
+        <div class="price">18 lei</div>
+      </div>
+      <div class="menu-item">
+        <h4>Matcha Latte</h4>
+        <p>Amestec armonios de ceai verde și lapte.</p>
+        <div class="price">16 lei</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="despre">
+    <h3>Despre Urban Roast</h3>
+    <p class="about">
+      La <strong>Urban Roast</strong>, credem că fiecare ceașcă de cafea spune o poveste.  
+      Boabele noastre sunt atent selecționate din ferme sustenabile, prăjite local și transformate în băuturi care aduc un strop de inspirație în fiecare zi.  
+      Fie că vii dimineața pentru energia ta zilnică sau seara pentru un moment de relaxare, la Urban Roast te simți mereu ca acasă.
+    </p>
+  </section>
+
+  <section cl
