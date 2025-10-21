@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meniul nostru - Urban Roast</title>
+  <link rel="stylesheet" href="meniu.css">
+</head>
+<body>
+  <header>
+    <h1>☕ Meniul Urban Roast</h1>
+    <p>Descoperă selecția noastră de băuturi și deserturi artizanale</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Acasă</a>
+    <a href="despre.html">Despre noi</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="menu-section">
+    <h2>☕ Cafea</h2>
+    <div class="menu-grid">
+      <div class="item">
+        <h3>Espresso</h3>
+        <p>Shot intens de cafea de specialitate, aromă bogată și echilibrată.</p>
+        <span>10 lei</span>
+      </div>
+      <div class="item">
+        <h3>Cappuccino</h3>
+        <p>Espresso dublu cu lapte cremos și spumă fină de lapte.</p>
+        <span>14 lei</span>
+      </div>
+      <div class="item">
+        <h3>Flat White</h3>
+        <p>Dublu espresso cu lapte microspumat, perfect echilibrat.</p>
+        <span>15 lei</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <h2>🍰 Deserturi</h2>
+    <div class="menu-grid">
+      <div class="item">
+        <h3>Cheesecake</h3>
+        <p>Clasic newyorkez cu sos de fructe de pădure.</p>
+        <span>16 lei</span>
+      </div>
+      <div class="item">
+        <h3>Tiramisu</h3>
+        <p>Rețetă autentică italiană cu cafea espresso și mascarpone.</p>
+        <span>18 lei</span>
+      </div>
+      <div class="item">
+        <h3>Brownie</h3>
+        <p>Prajitură densă cu ciocolată belgiană și nuci.</p>
+        <span>15 lei</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <h2>🍵 Ceaiuri</h2>
+    <div class="menu-grid">
+      <div class="item">
+        <h3>Ceai Verde Sencha</h3>
+        <p>Ceai japonez rafinat, bogat în antioxidanți.</p>
+        <span>12 lei</span>
+      </div>
+      <div class="item">
+        <h3>Ceai Negru Assam</h3>
+        <p>Aromă intensă și notă ușor malțuită, perfect dimineața.</p>
+        <span>12 lei</span>
+      </div>
+      <div class="item">
+        <h3>Ceai de Mușețel</h3>
+        <p>Calmant și floral, ideal pentru o seară relaxantă.</p>
+        <span>10 lei</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Urban Roast | Toate drepturile rezervate</p>
+  </footer>
+</body>
+</html>
