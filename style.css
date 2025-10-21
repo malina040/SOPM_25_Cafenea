@@ -1,10 +1,13 @@
+/* ======== Stil general ======== */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: #faf8f6;
   color: #333;
+  overflow-x: hidden;
 }
 
+/* ======== Header ======== */
 header {
   background-color: #3c2f2f;
   color: white;
@@ -17,6 +20,12 @@ header h1 {
   font-size: 2em;
 }
 
+header p {
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+/* ======== Navigație ======== */
 nav {
   background-color: #6b4f4f;
   display: flex;
@@ -32,13 +41,15 @@ nav a {
   background-color: #8b5e3c;
   padding: 10px 20px;
   border-radius: 8px;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
   background-color: #a47048;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
+/* ======== Secțiune principală (index) ======== */
 .hero {
   text-align: center;
   padding: 100px 20px;
@@ -77,10 +88,112 @@ nav a:hover {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
+/* ======== Footer ======== */
 footer {
   background-color: #3c2f2f;
   color: white;
   text-align: center;
   padding: 15px 0;
   margin-top: 50px;
+}
+
+/* ======== Pagina DESPRE NOI ======== */
+
+/* Fundal general cu gradient + boabe animate */
+body.coffee-bg {
+  background: linear-gradient(to bottom, #f7eee7, #e2c8a8);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* containerul cu boabe */
+.coffee-beans {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* o boabă de cafea */
+.bean {
+  position: absolute;
+  width: 22px;
+  height: 14px;
+  background: #4b2e05;
+  border-radius: 50%;
+  animation: fall 8s linear infinite;
+  opacity: 0.9;
+}
+
+/* fiecare boabă cade diferit */
+.bean:nth-child(1) { left: 10%; animation-delay: 0s; }
+.bean:nth-child(2) { left: 30%; animation-delay: 2s; }
+.bean:nth-child(3) { left: 55%; animation-delay: 4s; }
+.bean:nth-child(4) { left: 75%; animation-delay: 6s; }
+.bean:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+@keyframes fall {
+  0%   { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* ======== Secțiunea Despre Noi ======== */
+.about {
+  max-width: 800px;
+  margin: 80px auto;
+  text-align: center;
+  line-height: 1.8;
+  color: #3c2f2f;
+  background-color: rgba(255, 248, 240, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.about h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #6b4f4f;
+}
+
+.about p {
+  opacity: 0;
+  transform: translateY(40px);
+  font-size: 1.1em;
+  transition: all 1s ease;
+}
+
+/* ======== Animații text ======== */
+.fade-in {
+  animation: fadeIn 1.2s forwards;
+}
+
+.slide-up {
+  animation: slideUp 1.2s forwards;
+}
+
+.slide-up.delay1 {
+  animation-delay: 0.8s;
+}
+
+.slide-up.delay2 {
+  animation-delay: 1.6s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
