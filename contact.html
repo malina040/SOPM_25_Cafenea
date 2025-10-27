@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Urban Roast</title>
+  <style>
+    :root {
+      --accent:#8b5e3c;
+      --bg:#faf8f6;
+      --card:#ffffff;
+      --text:#3c2f2f;
+      --muted:#666;
+    }
+    body {
+      margin:0;
+      font-family:Inter, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+    }
+
+    /* NAVBAR */
+    nav {
+      background-color: var(--accent);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #a47048;
+    }
+
+    header {
+      background: var(--accent);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    /* Layout principal */
+    .wrap {
+      max-width:1100px;
+      margin:28px auto;
+      padding:0 16px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:24px;
+      align-items:start;
+    }
+    .card{ background:var(--card); border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); padding:18px; }
+    .info{ padding:12px 8px; }
+    .field{ display:flex; flex-direction:column; margin-bottom:12px; }
+    .field label{ font-size:0.9rem; margin-bottom:6px; color:var(--muted); }
+    .field input, .field textarea{
+      border:1px solid #e6e2df;
+      padding:10px 12px;
+      border-radius:8px;
+      font-size:0.95rem;
+      outline:none;
+      transition:box-shadow .12s;
+    }
+    .field input:focus, .field textarea:focus{ box-shadow:0 0 0 3px rgba(139,94,60,0.12); border-color:var(--accent); }
+    .row{ display:flex; gap:12px; }
+    .btn{ background:var(--accent); color:white; padding:10px 14px; border-radius:10px; border:0; cursor:pointer; font-weight:600; }
+    .muted{ color:var(--muted); font-size:0.95rem; }
+
+    .right{ display:flex; flex-direction:column; gap:14px; }
+    .mapframe{ width:100%; height:300px; border-radius:10px; overflow:hidden; border:1px solid #eee; }
+    .contact-list { display:grid; gap:8px; }
+    .contact-item { display:flex; gap:10px; align-items:flex-start; }
+    .contact-item b{ width:110px; display:inline-block; color:var(--muted); }
+    .hours{ background:#fff9f6; padding:10px; border-radius:8px; border:1px solid rgba(139,94,60,0.08); }
+    footer{ text-align:center; padding:18px 6px; color:var(--muted); font-size:0.9rem; margin-top:30px; }
+    @media (max-width:920px){
+      .wrap{ grid-template-columns: 1fr; }
+      .right{ order:2; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bara de navigare -->
+  <nav>
+    <a href="index.html">Acasă</a>
+    <a href="despre.html">Despre noi</a>
+    <a href="meniu.html">Meniu</a>
+    <a href="contact.html" style="background:#a47048;">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Urban Roast — Contact</h1>
+  </header>
+
+  <main class="wrap">
+    <!-- LEFT: Formularul -->
+    <section class="card">
+      <h2 style="margin-top:0">Trimite-ne un mesaj</h2>
+      <p class="muted">Completează formularul și îți răspundem în cel mult 24h (sau mai repede 😉).</p>
+
+      <form id="contactForm" class="info" onsubmit="handleSubmit(event)">
+        <div class="row">
+          <div style="flex:1" class="field">
+            <label for="name">Nume</label>
+            <input id="name" name="name" required placeholder="Numele tău" />
+          </div>
+          <div style="width:150px" class="field">
+            <label for="phone">Telefon</label>
+            <input id="phone" name="phone" placeholder="+40 7xx xxx xxx" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="ex: nume@exemplu.ro" />
+        </div>
+
+        <div class="field">
+          <label for="message">Mesaj</label>
+          <textarea id="message" name="message" rows="5" placeholder="Spune-ne cu ce te putem ajuta..." required></textarea>
+        </div>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+          <button class="btn" type="submit">Trimite mesaj</button>
+          <div class="muted" id="formStatus" aria-live="polite"></div>
+        </div>
+      </form>
+
+      <hr style="margin:18px 0; border:none; border-top:1px solid #f0eceb;" />
+
+      <div>
+        <h3 style="margin:6px 0">Informații rapide</h3>
+        <div class="contact-list">
+          <div class="contact-item"><b>Telefon</b><div>+40 268 123 456</div></div>
+          <div class="contact-item"><b>Email</b><div><a href="mailto:contact@urbanroast.ro">contact@urbanroast.ro</a></div></div>
+          <div class="contact-item"><b>Adresă</b><div>Strada Republicii 25, Brașov, Romania</div></div>
+          <div class="contact-item"><b>Program</b>
+            <div class="hours">L-V: 08:00 – 20:00<br>Sâmbătă: 09:00 – 18:00<br>Duminică: 09:00 – 16:00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: Harta și social -->
+    <aside class="right">
+      <div class="card">
+        <h3 style="margin-top:0">Unde ne găsești</h3>
+        <div class="mapframe">
+          <iframe
+            width="100%"
+            height="100%"
+            frameborder="0"
+            style="border:0; filter:grayscale(15%) contrast(110%);"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCfpFwSeE2M9V45ehHsuNU8p_mDaGYsoZg&q=Strada+Republicii+25,+Brașov,+Romania"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div style="margin-top:10px; display:flex; gap:8px; align-items:center; justify-content:space-between;">
+          <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Strada+Republicii+25,+Brașov,+Romania" target="_blank" rel="noopener">Get directions</a>
+          
+        </div>
+      </div>
+
+      <div class="card">
+  <h3 style="margin:0 0 6px 0">Social</h3>
+  <div class="muted">Urmărește-ne pentru oferte și noutăți:</div>
+  <div style="margin-top:10px; display:flex; flex-direction:column; gap:6px; font-weight:500;">
+    <span>📘 Facebook: <b>UrbanRoast</b></span>
+    <span>📸 Instagram: <b>Urban_roast</b></span>
+    <span>🎵 TikTok: <b>urban_roast_coffee</b></span>
+  </div>
+</div>
+
+    </aside>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Urban Roast — Toate drepturile rezervate.
+  </footer>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Se trimite...';
+      setTimeout(()=>{
+        status.textContent = 'Mesaj trimis — îți vom răspunde curând!';
+        document.getElementById('contactForm').reset();
+      }, 900);
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
